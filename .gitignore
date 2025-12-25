@@ -1,0 +1,94 @@
+# .gitignore - Best-practices for a Node/web project (Windows/Mac/Linux)
+# Keep tracked files clean: ignore OS files, editors, dependencies, build output, logs, and secrets
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp/
+.pnp.js
+
+# Build outputs
+/dist/
+/build/
+/out/
+
+# Production and cache
+.cache/
+.vite/
+.parcel-cache/
+.esbuild/
+.snowpack/
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Environment files (secrets)
+.env
+.env.*.local
+.env.local
+local.env
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+/jest-cache/
+/coverage/
+/cypress/screenshots/
+/cypress/videos/
+
+# Storybook
+.storybook/
+
+# Framework specific (leave commented if not used)
+# Next.js
+# .next/
+
+# Misc sensitive keys
+*.pem
+*.key
+
+# Yarn v2/berry
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.yarnrc.yml
+
+# Ignore node binary if accidentally committed
+node
+
+# If you accidentally committed files before adding this .gitignore, remove them from the index with:
+#   git rm -r --cached <path>
+# then commit the removal and add/commit this .gitignore

@@ -1,0 +1,28 @@
+import Phaser from "phaser"
+import TitleScene from "./scenes/TitleScene.js"
+import VisualNovelScene from "./scenes/VisualNovelScene.js"
+import { screenSize, debugConfig, renderConfig } from "./gameConfig.json"
+
+const config = {
+  parent: 'game-root',
+  type: Phaser.AUTO,
+  width: screenSize.width.value,
+  height: screenSize.height.value,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
+  physics: {
+    default: "arcade",
+    arcade: {
+      debug: debugConfig.debug.value,
+      debugShowBody: debugConfig.debugShowBody.value,
+      debugShowStaticBody: debugConfig.debugShowStaticBody.value,
+      debugShowVelocity: debugConfig.debugShowVelocity.value,
+    },
+  },
+  pixelArt: renderConfig.pixelArt.value,
+  scene: [TitleScene, VisualNovelScene],
+}
+
+export default new Phaser.Game(config)

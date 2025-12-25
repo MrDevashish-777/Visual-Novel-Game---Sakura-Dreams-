@@ -1,0 +1,104 @@
+{
+  "screenSize": {
+    "width": {
+      "value": 1152,
+      "type": "number",
+      "description": "Screen width"
+    },
+    "height": {
+      "value": 768,
+      "type": "number",
+      "description": "Screen height"
+    }
+  },
+  "debugConfig": {
+    "debug": {
+      "value": false,
+      "type": "boolean",
+      "description": "Enable debug mode"
+    },
+    "debugShowBody": {
+      "value": false,
+      "type": "boolean",
+      "description": "Show collision bodies"
+    },
+    "debugShowStaticBody": {
+      "value": false,
+      "type": "boolean",
+      "description": "Show static collision bodies"
+    },
+    "debugShowVelocity": {
+      "value": false,
+      "type": "boolean",
+      "description": "Show velocity vectors"
+    }
+  },
+  "renderConfig": {
+    "pixelArt": {
+      "value": false,
+      "type": "boolean",
+      "description": "Enable pixel art rendering"
+    }
+  },
+  "visualNovelConfig": {
+    "textSpeed": {
+      "value": 50,
+      "type": "number",
+      "description": "Text display speed (milliseconds)"
+    },
+    "autoAdvanceDelay": {
+      "value": 3000,
+      "type": "number",
+      "description": "Auto advance delay (milliseconds)"
+    },
+    "characterScaleInDialog": {
+      "value": 0.4,
+      "type": "number",
+      "description": "Character scale ratio in dialogue"
+    },
+    "backgroundScaleX": {
+      "value": 1.0,
+      "type": "number",
+      "description": "Background X-axis scale ratio"
+    },
+    "backgroundScaleY": {
+      "value": 1.0,
+      "type": "number",
+      "description": "Background Y-axis scale ratio"
+    }
+  },
+  "audioConfig": {
+    "musicVolume": {
+      "value": 0.6,
+      "type": "number",
+      "description": "Background music volume"
+    },
+    "sfxVolume": {
+      "value": 0.3,
+      "type": "number",
+      "description": "Sound effects volume"
+    }
+  },
+  "loadingConfig": {
+    "totalLoadingTime": {
+      "value": 4000,
+      "type": "number",
+      "description": "Total loading animation duration (milliseconds)"
+    },
+    "stageTransitionDelay": {
+      "value": 200,
+      "type": "number",
+      "description": "Delay between loading stages (milliseconds)"
+    },
+    "sakuraParticleCount": {
+      "value": 8,
+      "type": "number",
+      "description": "Number of sakura particles in loading screen"
+    },
+    "progressBarWidth": {
+      "value": 500,
+      "type": "number",
+      "description": "Maximum width of progress bar"
+    }
+  }
+}

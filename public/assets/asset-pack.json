@@ -1,0 +1,267 @@
+{
+  "fonts": {
+    "files": [
+      {
+        "url": "https://cdn-game-mcp-test.gambo.ai/shared/supercell-magic_0.ttf",
+        "type": "font",
+        "key": "SupercellMagic",
+        "fontType": "opentype"
+      }
+    ]
+  },
+  "ui_images": {
+    "files": [
+      {
+        "type": "image",
+        "key": "game_title",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/game_title.png"
+      },
+      {
+        "type": "image",
+        "key": "text_box",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/text_box.png"
+      },
+      {
+        "type": "image",
+        "key": "choice_button",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/choice_button.png"
+      }
+    ]
+  },
+  "backgrounds": {
+    "files": [
+      {
+        "type": "image",
+        "key": "classroom_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/classroom_background.png"
+      },
+      {
+        "type": "image",
+        "key": "school_hallway_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/school_hallway_background.png"
+      },
+      {
+        "type": "image",
+        "key": "sakura_park_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/sakura_park_background.png"
+      },
+      {
+        "type": "image",
+        "key": "library_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/library_background.png"
+      },
+      {
+        "type": "image",
+        "key": "school_rooftop_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/school_rooftop_background.png"
+      },
+      {
+        "type": "image",
+        "key": "school_garden_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/school_garden_background.png"
+      },
+      {
+        "type": "image",
+        "key": "sports_field_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/sports_field_background.png"
+      },
+      {
+        "type": "image",
+        "key": "school_cafeteria_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/school_cafeteria_background.png"
+      },
+      {
+        "type": "image",
+        "key": "moonlight_terrace_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/moonlight_terrace_background.png"
+      },
+      {
+        "type": "image",
+        "key": "student_council_room_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/student_council_room_background.png"
+      },
+      {
+        "type": "image",
+        "key": "music_room_background",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/music_room_background.png"
+      }
+    ]
+  },
+  "characters": {
+    "files": [
+      {
+        "type": "image",
+        "key": "yuki_character",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/yuki_character.png"
+      },
+      {
+        "type": "image",
+        "key": "yuki_character_happy",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/yuki_character_happy.png"
+      },
+      {
+        "type": "image",
+        "key": "yuki_character_shy",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/yuki_character_shy.png"
+      },
+      {
+        "type": "image",
+        "key": "yuki_character_sad",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/yuki_character_sad.png"
+      },
+      {
+        "type": "image",
+        "key": "yuki_character_surprised",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/yuki_character_surprised.png"
+      },
+      {
+        "type": "image",
+        "key": "yuki_character_thoughtful",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/yuki_character_thoughtful.png"
+      },
+      {
+        "type": "image",
+        "key": "mei_character",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/mei_character.png"
+      },
+      {
+        "type": "image",
+        "key": "mei_character_happy",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/mei_character_happy.png"
+      },
+      {
+        "type": "image",
+        "key": "mei_character_excited",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/mei_character_excited.png"
+      },
+      {
+        "type": "image",
+        "key": "mei_character_determined",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/mei_character_determined.png"
+      },
+      {
+        "type": "image",
+        "key": "mei_character_worried",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/mei_character_worried.png"
+      },
+      {
+        "type": "image",
+        "key": "mei_character_shy",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/mei_character_shy.png"
+      },
+      {
+        "type": "image",
+        "key": "rin_character",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/rin_character.png"
+      },
+      {
+        "type": "image",
+        "key": "rin_character_mysterious",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/rin_character_mysterious.png"
+      },
+      {
+        "type": "image",
+        "key": "rin_character_cold",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/rin_character_cold.png"
+      },
+      {
+        "type": "image",
+        "key": "rin_character_gentle",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/rin_character_gentle.png"
+      },
+      {
+        "type": "image",
+        "key": "rin_character_surprised",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/rin_character_surprised.png"
+      },
+      {
+        "type": "image",
+        "key": "rin_character_thoughtful",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/rin_character_thoughtful.png"
+      }
+    ]
+  },
+  "sound_effects": {
+    "files": [
+      {
+        "type": "audio",
+        "key": "ui_click",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/sound_effects/ui_click.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "text_typing",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/sound_effects/text_typing.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "page_turn",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/sound_effects/page_turn.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "sports_whistle",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/sound_effects/sports_whistle.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "crowd_cheer",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/sound_effects/crowd_cheer.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "piano_chord",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/sound_effects/piano_chord.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "night_wind",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/sound_effects/night_wind.mp3"
+      }
+    ]
+  },
+  "background_musics": {
+    "files": [
+      {
+        "type": "audio",
+        "key": "peaceful_school_theme",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/peaceful_school_theme.wav"
+      },
+      {
+        "type": "audio",
+        "key": "romantic_sakura_theme",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/romantic_sakura_theme.wav"
+      },
+      {
+        "type": "audio",
+        "key": "gentle_conversation_theme",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/gentle_conversation_theme.wav"
+      },
+      {
+        "type": "audio",
+        "key": "emotional_moment_theme",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/emotional_moment_theme.wav"
+      },
+      {
+        "type": "audio",
+        "key": "energetic_sports_theme",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/energetic_sports_theme.wav"
+      },
+      {
+        "type": "audio",
+        "key": "mysterious_night_theme",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/mysterious_night_theme.wav"
+      },
+      {
+        "type": "audio",
+        "key": "intellectual_theme",
+        "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/intellectual_theme.wav"
+      }
+    ]
+  },
+  "meta": {
+    "app": "Gambo AI",
+    "version": 1,
+    "showAllFilesInBlocks": false
+  }
+}
