@@ -79,3 +79,42 @@ All game assets (characters, backgrounds, UI elements, music, and sound effects)
 ---
 
 Experience the magic of interactive storytelling in **Sakura Dream**! 🌸
+
+---
+
+## 🚀 Deploying to Netlify (Quick Guide)
+
+This project is configured to be deployed on Netlify as a static site.
+
+What I added for Netlify:
+- `netlify.toml` — build command and publish directory (`dist`).
+- `public/_redirects` — SPA fallback to `index.html` so client-side routing works.
+- `vite.config.js` — `base: './'` to make asset URLs relative and robust across previews.
+
+Deployment options:
+
+1) Deploy via Netlify UI (recommended):
+   - Push your repo to GitHub (or other supported Git provider).
+   - In Netlify, "New site from Git" → connect repo.
+   - Set the build command to `npm run build` and the publish directory to `dist` (these are in `netlify.toml`).
+   - Deploy.
+
+2) Manual deploy (drag & drop):
+   - Run `npm run build` locally.
+   - Zip or drag the generated `dist/` folder to Netlify's "Sites → Add new site → Deploy manually".
+
+3) CLI deploy (optional, requires `netlify-cli`):
+   - `npm run build`
+   - `npx netlify deploy --prod --dir=dist` (or follow `netlify deploy` prompts for draft/production deploys)
+
+Notes & troubleshooting:
+- Single Page App routing: the `public/_redirects` file contains `/* /index.html 200` to route all requests to your app entry.
+- Build output is `dist/` by default (this is ignored by `.gitignore` — good). If `dist/` was accidentally committed, remove it from the index: `git rm -r --cached dist` then commit.
+- If your app uses environment secrets, set them in Netlify's Site Settings → Build & deploy → Environment → Environment variables.
+- If you prefer absolute paths for assets, change `base` in `vite.config.js` to `'/'`.
+
+If you'd like, I can also:
+- Add a GitHub Action that automatically deploys to Netlify on push, or
+- Add a helper `deploy` script using `netlify-cli`.
+
+---

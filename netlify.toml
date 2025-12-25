@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Single Page App routing (Netlify will still use the _redirects file from /public)
+# If you need environment-specific settings, add [context.<name>.environment] blocks.

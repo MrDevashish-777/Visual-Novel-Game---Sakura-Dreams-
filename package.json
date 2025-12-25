@@ -18,6 +18,9 @@
   "author": "",
   "license": "ISC",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "bugs": {
     "url": "https://github.com/MrDevashish-777/Visual-Novel-Game---Sakura-Dreams-/issues"
   },
