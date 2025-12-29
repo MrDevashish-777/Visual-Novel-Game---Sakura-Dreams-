@@ -84,6 +84,31 @@
         "type": "image",
         "key": "music_room_background",
         "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/music_room_background.png"
+      },
+      {
+        "type": "image",
+        "key": "beach_background",
+        "url": "public/assets/background_scenery/Beach.png"
+      },
+      {
+        "type": "image",
+        "key": "cafe_background",
+        "url": "public/assets/background_scenery/Cafe.png"
+      },
+      {
+        "type": "image",
+        "key": "classroom_background_day",
+        "url": "public/assets/background_scenery/classroom_background.png"
+      },
+      {
+        "type": "image",
+        "key": "mountain_background",
+        "url": "public/assets/background_scenery/Mountain.png"
+      },
+      {
+        "type": "image",
+        "key": "shopping_mall_background",
+        "url": "public/assets/background_scenery/Shopping-mall.png"
       }
     ]
   },
@@ -256,6 +281,16 @@
         "type": "audio",
         "key": "intellectual_theme",
         "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/music/intellectual_theme.wav"
+      },
+      {
+        "type": "audio",
+        "key": "beach_theme",
+        "url": "public/assets/Bg_sound/Beach-m.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "mountain_theme",
+        "url": "public/assets/Bg_sound/Mountain-m.mp3"
       }
     ]
   },
