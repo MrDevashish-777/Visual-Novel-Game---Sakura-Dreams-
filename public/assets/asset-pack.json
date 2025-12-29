@@ -88,27 +88,27 @@
       {
         "type": "image",
         "key": "beach_background",
-        "url": "public/assets/background_scenery/Beach.png"
+        "url": "assets/background_scenery/Beach.png"
       },
       {
         "type": "image",
         "key": "cafe_background",
-        "url": "public/assets/background_scenery/Cafe.png"
+        "url": "assets/background_scenery/Cafe.png"
       },
       {
         "type": "image",
         "key": "classroom_background_day",
-        "url": "public/assets/background_scenery/classroom_background.png"
+        "url": "assets/background_scenery/classroom_background.png"
       },
       {
         "type": "image",
         "key": "mountain_background",
-        "url": "public/assets/background_scenery/Mountain.png"
+        "url": "assets/background_scenery/Mountain.png"
       },
       {
         "type": "image",
         "key": "shopping_mall_background",
-        "url": "public/assets/background_scenery/Shopping-mall.png"
+        "url": "assets/background_scenery/Shopping-mall.png"
       }
     ]
   },
