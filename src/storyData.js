@@ -48,51 +48,58 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "Dust motes dance in the heavy afternoon heat. The air in Sakura High smells of floor wax and old secrets."
+        text: "The afternoon sun leans heavily against the classroom windows. The air smells of dust and the faint, chemical scent of floor wax."
       },
       {
         character: "narrator", 
-        text: "You stand at the threshold of Class 2-B. It's just another school day for them, but for you, it's the beginning of a slow descent."
+        text: "You stand at the door of Class 2-B. To everyone else, it's just Monday. To you, it's a room full of strangers who already seem to know where you belong."
       },
       {
         character: "yuki",
         sprite: "yuki_character",
-        text: "You're late. But don't worry... I already told the teacher you were with the principal. I'm Yukino, the class rep."
+        text: "You're at the wrong desk. Third row, second from the window. I've already moved your things."
       },
+      { character: "narrator", text: "A girl with a perfectly tied ribbon looks up. Her smile doesn't reach her eyes; it's a professional courtesy." },
       {
-        character: "narrator",
-        text: "She smiles. It's a perfect smile. Too perfect. Like she's been practicing it in a mirror since she was five."
+        character: "yuki",
+        sprite: "yuki_character",
+        text: "I told Sensei you were helping the office with the transfer paperwork. It would be a shame to start your first day with a mark on your record."
       },
       {
         character: "mei",
         sprite: "mei_character_happy",
-        text: "Hey, hey! New face! I'm Megumi! Ignore Yuki, she's always so formal. Come sit by me, I need someone to help me hide these snacks from the teacher!"
+        text: "Don't mind Yuki. She's just obsessed with keeping the universe in a straight line. I'm Megumi, by the way. I'm the one who'll actually help you survive this place."
       },
       {
         character: "narrator",
-        text: "Megumi's laughter is loud, almost desperate. She's looking at you like you're a life raft in a very deep ocean."
+        text: "The girl next to you leans in. Her laugh is a little too loud for the quiet room. She's vibrating with a nervous energy that she's trying very hard to pass off as friendliness."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "...Don't believe everything you hear. Words are just masks we wear so we don't have to look at ourselves."
+        text: "Survival requires more than just snacks and lies, Megumi."
       },
       {
         character: "narrator",
-        text: "Rinne doesn't look up from her book. Her voice is a cold splash of water in the warm room."
+        text: "In the back corner, a girl is watching you. Not looking—watching. She hasn't turned a page in five minutes."
+      },
+      {
+        character: "rin",
+        sprite: "rin_character",
+        text: "Welcome to the aquarium. Try not to tap on the glass. Some of us are more fragile than we look."
       }
     ],
     choices: [
       {
-        text: "Accept Yukino's 'protection'",
+        text: "Thank Yukino for the 'favor'",
         next: "yuki_route_1"
       },
       {
-        text: "Let Megumi pull you into her world",
+        text: "Ask Megumi why she's being so helpful",
         next: "mei_route_1" 
       },
       {
-        text: "Wait for Rinne to say more",
+        text: "Meet Rinne's gaze",
         next: "rin_route_1"
       }
     ]
@@ -105,29 +112,29 @@ export const storyData = {
       {
         character: "yuki",
         sprite: "yuki_character",
-        text: "I hope you don't mind that I lied for you. In this school, first impressions are everything. If you start as 'the late student', people will never see you as anything else."
+        text: "You don't need to thank me. I just dislike disorder. A new student is like a loose thread on a sweater. If I don't tuck it in, everything eventually unravels."
       },
       {
         character: "narrator",
-        text: "She's already tidying your desk, moving your notebook two inches to the left so it aligns perfectly with the edge."
+        text: "She's already adjusting the books on your desk, her movements precise, almost rhythmic. She doesn't look at you, but she's perfectly aware of your presence."
       },
       {
         character: "yuki",
         sprite: "yuki_character", 
-        text: "You should stay close to me for a while. I know exactly how to make sure you're liked. It's... easier if you just follow my lead."
+        text: "Stick with me. I'll make sure you're assigned to the right committees, introduced to the right people. It's safer that way."
       },
       {
         character: "narrator",
-        text: "There's a strange weight to her kindness. It feels less like a gift and more like a debt being recorded."
+        text: "There's no warmth in the offer. It sounds less like a invitation and more like an instruction. She's building a cage around you, and she's calling it 'help'."
       }
     ],
     choices: [
       {
-        text: "Ask why she's helping you",
+        text: "Why do you care so much about 'disorder'?",
         next: "yuki_route_2a"
       },
       {
-        text: "Politely decline her 'guidance'",
+        text: "I think I can handle my own threads, Yuki",
         next: "yuki_route_2b"
       }
     ]
@@ -139,30 +146,30 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "Megumi's hand is warm, but she's gripping yours a little too tightly. She's practically dragging you down the hallway."
+        text: "Megumi's hand is on your arm before you can even stand up. Her grip is tight—not quite painful, but urgent. She's practically pulling you toward the door."
       },
       {
         character: "mei",
         sprite: "mei_character_excited",
-        text: "Don't listen to Rinne. She thinks everyone is a tragedy waiting to happen. Life's too short for all that deep stuff, right?"
+        text: "Quick, before Yuki starts explaining the fifty-seven rules of the hallway. I've got a stash of melon pan in the gym shed that's calling our names."
       },
       {
         character: "mei", 
         sprite: "mei_character_happy",
-        text: "I'll show you the rooftop. It's the only place where the air doesn't feel like it's been breathed a thousand times already."
+        text: "You're lucky I found you. This place... it's like a museum. Everyone's afraid to touch anything. Me? I'm just here for the ride."
       },
       {
         character: "narrator",
-        text: "She's smiling, but she won't meet your eyes. Her energy feels like a wall she's built to keep something out."
+        text: "She's grinning, but she's talking too fast. Her eyes keep darting toward the classroom door, as if she's waiting for someone to come out and stop her."
       }
     ],
     choices: [
       {
-        text: "Follow her to the rooftop",
+        text: "Are you always this... intense?",
         next: "mei_route_2a"
       },
       {
-        text: "Ask her why she's in such a rush",
+        text: "What are you running from, Megumi?",
         next: "mei_route_2b"
       }
     ]
@@ -174,30 +181,30 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "You approach Rinne. She doesn't flinch, doesn't look up. She just turns a page, the sound loud in the sudden silence."
+        text: "You step toward the back corner. The air here feels thinner, cooler. Rinne doesn't look up, but she closes her book with a deliberate 'thud'."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "They told you to come here, didn't they? Yukino wants to see if you're easy to manage. Megumi wants to see if you're loud enough to drown out her thoughts."
+        text: "You're making a mistake. Choosing to talk to me doesn't fit the role they've already assigned you."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "And you? You're just curious. Curiosity is what gets the protagonist killed in the first act of most good stories."
+        text: "Yukino wants a project. Megumi wants an audience. I'm just the one who watches the theater burn. Why would you want to sit with me?"
       },
       {
         character: "narrator", 
-        text: "She finally looks up. Her eyes aren't just purple; they're the color of a bruise that won't heal."
+        text: "She finally looks up. Her eyes are old. Not tired, but deeply, profoundly weary of things she's seen a hundred times before."
       }
     ],
     choices: [
       {
-        text: "I'm not a character in a book, Rinne",
+        text: "Maybe I'm tired of the 'theater' too",
         next: "rin_route_2a"
       },
       {
-        text: "Tell me what you see",
+        text: "What role did they assign me?",
         next: "rin_route_2b"
       }
     ]
@@ -209,70 +216,70 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "The school garden is beautiful, but the hedges are trimmed with surgical precision. Yuki stands by the roses, her back to you."
+        text: "The school garden is a masterpiece of control. Every leaf seems to have been told where to grow. Yuki stands by the hedges, her shears glinting in the sun."
       },
       {
         character: "yuki", 
         sprite: "yuki_character_thoughtful",
-        text: "Why help? Because chaos is exhausting. If I can help you fit in, everything remains balanced. Peaceful."
+        text: "Disorder is just a polite word for pain. If people are left to their own devices, they hurt each other. They make messes. I just... prevent the mess."
       },
       {
         character: "yuki",
         sprite: "yuki_character",
-        text: "Do you know what happens to things that don't fit? They get pruned. Like these roses."
+        text: "You see this branch? It's trying to grow toward the sun, but it's blocking the others. If I don't cut it, the whole hedge suffers."
       },
       {
         character: "narrator",
-        text: "She snips a perfectly healthy bud that was growing slightly off-center. She doesn't look sad about it."
+        text: "She snips the branch. It falls to the ground with a soft 'thump'. She looks at you, and for a split second, you see the exhaustion behind the mask."
       },
       {
         character: "yuki",
         sprite: "yuki_character_happy",
-        text: "You have potential. But potential is dangerous if it's not directed correctly. Promise me you won't do anything... unpredictable."
+        text: "I've already arranged for you to join the student council as an observer. It's a clean path. No thorns. You'll thank me later."
       }
     ],
     choices: [
       {
-        text: "I'll do my best to fit in",
+        text: "What if I want the thorns?",
         next: "yuki_route_3a"
       },
       {
-        text: "I'm not a rose, Yuki",
+        text: "I'll do as you say, Yuki",
         next: "yuki_route_3b"
       }
     ]
   },
 
   yuki_route_2b: {
-    background: "classroom",
+    background: "student_council_room",
     music: "peaceful_school_theme",
     dialogue: [
       {
         character: "yuki",
         sprite: "yuki_character",
-        text: "Of course! I understand. It's important to explore things at your own pace."
+        text: "I see. You value your independence. That's a brave choice, though often a lonely one."
       },
       {
         character: "narrator",
-        text: "Yukino's understanding smile shows her consideration for others."
+        text: "She's smiling, but the atmosphere in the room has shifted. It feels like you've just failed a test you didn't know you were taking."
       },
       {
         character: "yuki",
         sprite: "yuki_character_happy",
-        text: "If you need any help during your exploration, feel free to find me anytime! I'm usually in the student council room after school."
+        text: "Just remember, the 'loose threads' are the ones that get caught in the machinery. I'll be here if you decide you need a needle and thread."
       },
       {
         character: "narrator",
-        text: "The afternoon passes quickly. You spend the rest of the time getting familiar with the classroom environment."
+        text: "She turns back to her paperwork, dismissing you without a word. The silence is louder than any argument could be."
       }
     ],
     choices: [
       {
-        text: "Visit the student council room after school",
+        text: "Apologize and ask for her help",
         next: "yuki_route_3c"
       },
       {
-        text: "Explore other places first",
+        text: "Leave the room quietly",
         next: "explore_school"
       }
     ]
@@ -284,69 +291,65 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "The wind on the rooftop is fierce. Megumi stands right at the edge, the safety fence the only thing between her and the drop."
+        text: "The wind screams across the rooftop, tearing at Megumi's hair. She's standing too close to the edge, looking out at the city like she's looking for an exit."
       },
       {
         character: "mei",
         sprite: "mei_character_excited",
-        text: "Look! Everything looks so small from here. Like you could just reach out and crush the whole school with one hand."
+        text: "Intense? Me? I'm just living, you know? Most people are just... vibrating in place. I want to move. I want to go so fast the world turns into a blur."
       },
       {
         character: "narrator",
-        text: "She turns to you, and for a second, the mask slips. She looks exhausted."
+        text: "She turns to you, her face flushed from the wind. Her eyes are wide, glassy. There's a desperation in her smile that makes your chest ache."
       },
       {
         character: "mei",
         sprite: "mei_character",
-        text: "Promise me something? Even if things get... messy. Don't just disappear. Everyone eventually disappears. It's so boring."
+        text: "If I stop moving, I have to think. And thinking is... it's like falling. So don't let me stop, okay? Promise me you'll keep me moving."
       }
     ],
     choices: [
       {
-        text: "I'm not going anywhere",
+        text: "I'll stay with you, Megumi",
         next: "mei_route_3a"
       },
       {
-        text: "That depends on you, Megumi",
+        text: "You can't run forever",
         next: "mei_route_3b"
       }
     ]
   },
 
-  mei_route_2c: {
-    background: "cafeteria",
+  mei_route_2b: {
+    background: "hallway",
     music: "peaceful_school_theme",
     dialogue: [
       {
         character: "narrator",
-        text: "Megumi takes you to the school cafeteria. Even though it's not mealtime, the aroma of food still lingers in the air."
+        text: "Megumi stops dead in her tracks. The hallway is empty, our shadows stretching long against the lockers."
+      },
+      {
+        character: "mei",
+        sprite: "mei_character",
+        text: "...Running? Who says I'm running? I'm just... I'm a track star, remember? That's what we do. We run."
+      },
+      {
+        character: "narrator",
+        text: "She tries to laugh, but it dies in her throat. She's looking at a flyer on the wall—a notice about academic probation. Her name isn't on it yet, but she's staring at it like it's a death warrant."
       },
       {
         character: "mei",
         sprite: "mei_character_happy",
-        text: "The aunt here makes the best curry! Every time after training, I come here to replenish my energy!"
-      },
-      {
-        character: "narrator",
-        text: "You can see that Megumi is well-liked here. Several cafeteria staff smile and wave at her."
-      },
-      {
-        character: "mei",
-        sprite: "mei_character_excited",
-        text: "Oh! And the bread here is freshly baked every morning. You must try it tomorrow!"
-      },
-      {
-        character: "narrator",
-        text: "Megumi's enthusiasm for food reminds you of her energetic personality."
+        text: "Come on! The melon pan will be gone if we don't hurry. Forget I said anything. I'm just tired."
       }
     ],
     choices: [
       {
-        text: "I'll definitely try it tomorrow",
+        text: "Follow her (Let her keep the mask)",
         next: "mei_route_3c"
       },
       {
-        text: "Do you always eat here?",
+        text: "Press her for the truth",
         next: "mei_route_3d"
       }
     ]
@@ -397,35 +400,35 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "The library is a tomb of dead thoughts. Rinne walks between the stacks, her fingers tracing the spines of books like she's reading them through her skin."
+        text: "The library is a cathedral of silence. Rinne leads you to the very back, where the books smell like forgotten centuries."
       },
       {
         character: "rin",
         sprite: "rin_character_gentle",
-        text: "Aren't you? We all have scripts. Yukino's is the 'Perfect Girl'. Megumi's is the 'Energetic Best Friend'."
+        text: "Most people come here to hide. I come here to see. Books don't lie. They tell you exactly what they are on the first page."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "My script is 'The Observer'. I watch the wheels turn until they eventually break. And they always break."
+        text: "Yukino is a tragedy disguised as a romance. Megumi is a comedy that's about to end. And you? You're the one who hasn't realized what genre you're in yet."
       },
       {
         character: "narrator",
-        text: "She stops and pulls a thin, black book from the shelf. She doesn't give it to you."
+        text: "She pulls a book from the shelf—'No Longer Human'. She doesn't hand it to you, she just lets you see the title."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "If I tell you the ending, will you still want to play? Or will you try to change the pages? Truth is the only betrayal that matters."
+        text: "If I show you the ending of this school year, will you still want to stay? Or will you close the book and walk away?"
       }
     ],
     choices: [
       {
-        text: "I want the truth, no matter what",
+        text: "I want to see the ending, Rinne",
         next: "rin_route_3a"
       },
       {
-        text: "I'd rather write my own ending",
+        text: "I'd rather write a new chapter",
         next: "rin_route_3b"
       }
     ]
@@ -437,39 +440,30 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "Rinne looks at you for a moment, then quietly nods."
+        text: "Rinne looks at you for a long time, her gaze heavy and clinical, like she's dissecting your thoughts."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "...Follow me."
-      },
-      {
-        character: "narrator",
-        text: "She silently packs her book and leads you to the library. The library is indeed very quiet, with only the soft sound of pages turning."
-      },
-      {
-        character: "rin",
-        sprite: "rin_character_thoughtful",
-        text: "This is my sanctuary. Here, I can immerse myself in different worlds without being disturbed."
-      },
-      {
-        character: "narrator",
-        text: "You notice Rinne seems more relaxed in this environment, as if she truly belongs here."
+        text: "They assigned you the role of the 'Catalyst'. The one who comes in and forces everyone else to change."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "Do you...really want to understand literature? Or are you just trying to get closer to me?"
+        text: "But catalysts are consumed by the reaction, didn't you know? By the time this is over, there won't be much of 'you' left."
+      },
+      {
+        character: "narrator",
+        text: "She turns back to the shelf, her fingers trailing over the spines. She looks lonely, but it's a loneliness she's carefully cultivated."
       }
     ],
     choices: [
       {
-        text: "I genuinely love literature",
+        text: "Why are you telling me this?",
         next: "rin_route_3c"
       },
       {
-        text: "I want to understand you better",
+        text: "I'm not afraid of the 'reaction'",
         next: "rin_route_3d"
       }
     ]
@@ -477,72 +471,41 @@ export const storyData = {
 
   // Continue with more routes...
   yuki_route_3a: {
-    background: "garden",
+    background: "student_council_room",
     music: "emotional_moment_theme",
     dialogue: [
       {
         character: "yuki",
-        sprite: "yuki_character_shy",
-        text: "Thank you...your words mean a lot to me."
+        sprite: "yuki_character_thoughtful",
+        text: "The thorns are what make the rose real, aren't they? I've spent so long trying to file them down that I've forgotten what it feels like to bleed."
       },
       {
         character: "narrator",
-        text: "Yukino's cheeks turn slightly pink as she gathers courage to share her secret."
+        text: "She's standing by the window, the student council room silent around her. She looks small against the vast, empty school building."
       },
       {
         character: "yuki",
         sprite: "yuki_character_thoughtful",
-        text: "I...I write poetry in my spare time. But I've never shown it to anyone because I'm afraid they'll think it's childish."
+        text: "I... I've done things. To keep the peace. Things I'm not proud of. But I did them for you. For everyone."
       },
       {
         character: "narrator",
-        text: "She pulls out a small notebook from her bag, her hands trembling slightly."
+        text: "She turns to you, her hands clasped tightly in front of her. She's trembling. This isn't a mask. This is the girl underneath, and she's terrified."
       },
       {
         character: "yuki",
-        sprite: "yuki_character_happy",
-        text: "Would you...would you like to read one of my poems?"
+        sprite: "yuki_character",
+        text: "The School Festival is tomorrow. Everything will be... decided then. Just promise me you'll stay by my side, no matter what people say."
       }
     ],
     choices: [
       {
-        text: "I'd be honored to read your poetry",
-        next: "yuki_ending_good"
+        text: "I promise, Yuki",
+        next: "the_revelation"
       },
       {
-        text: "Poetry isn't really my thing",
-        next: "yuki_ending_neutral"
-      }
-    ]
-  },
-
-  // Endings
-  yuki_ending_good: {
-    background: "garden",
-    music: "romantic_sakura_theme",
-    dialogue: [
-      {
-        character: "narrator",
-        text: "As you read Yukino's beautiful poetry about nature and emotions, you realize how talented and sensitive she truly is."
-      },
-      {
-        character: "yuki",
-        sprite: "yuki_character_happy",
-        text: "Thank you for understanding me. I feel like I can share anything with you."
-      },
-      {
-        character: "narrator",
-        text: "Under the setting sun in the garden, a beautiful friendship begins to bloom between you and Yukino."
-      },
-      {
-        character: "narrator",
-        text: "THE END - Yukino's Route: Garden of Poetry"
-      }
-    ],
-    choices: [
-      {
-        text: "Return to title screen",
-        next: "title_screen"
+        text: "I can't promise that",
+        next: "the_revelation"
       }
     ]
   },
@@ -554,60 +517,35 @@ export const storyData = {
       {
         character: "mei",
         sprite: "mei_character_excited",
-        text: "Really?! That's great! We have practice every day after school, and competitions on weekends!"
+        text: "If I keep running, the thoughts can't catch up. That's the secret, you know? Speed is the only thing that's honest."
       },
       {
         character: "narrator",
-        text: "Megumi's enthusiasm is contagious as she describes the various sports activities."
+        text: "She's wearing her track uniform, but she's not training. She's just standing in the middle of the field, looking at the hurdles like they're a mountain range she can't climb."
       },
       {
         character: "mei",
         sprite: "mei_character_happy",
-        text: "Don't worry if you're a beginner! We all help each other improve. That's what teamwork is about!"
+        text: "I made a deal. With Yuki. She keeps my grades looking 'perfect' so I can stay on the team. And in return... I just had to make sure you didn't ask too many questions."
       },
       {
         character: "narrator",
-        text: "You can see why Megumi is so popular - her positive attitude lifts everyone's spirits."
-      }
-    ],
-    choices: [
-      {
-        text: "I'd like to join the track team",
-        next: "mei_ending_good"
-      },
-      {
-        text: "Maybe I'll try a different sport",
-        next: "mei_ending_neutral"
-      }
-    ]
-  },
-
-  mei_ending_good: {
-    background: "sports_field",
-    music: "energetic_sports_theme",
-    dialogue: [
-      {
-        character: "narrator",
-        text: "Months later, you've become an integral part of the track team, training alongside Megumi every day."
+        text: "The confession comes out in a rush, like she's been holding her breath for a week. She doesn't look at you. She can't."
       },
       {
         character: "mei",
-        sprite: "mei_character_determined",
-        text: "Look how much you've improved! I knew you had potential from the start!"
-      },
-      {
-        character: "narrator",
-        text: "The sound of the starting pistol echoes as you both prepare for the regional championships, ready to chase your dreams together."
-      },
-      {
-        character: "narrator",
-        text: "THE END - Megumi's Route: Racing Towards Dreams"
+        sprite: "mei_character",
+        text: "The School Festival... she's going to make a move then. To secure everything. I'm sorry. I'm so, so sorry."
       }
     ],
     choices: [
       {
-        text: "Return to title screen",
-        next: "title_screen"
+        text: "Why are you telling me this now?",
+        next: "the_revelation"
+      },
+      {
+        text: "I don't blame you, Megumi",
+        next: "the_revelation"
       }
     ]
   },
@@ -619,66 +557,38 @@ export const storyData = {
       {
         character: "rin",
         sprite: "rin_character_surprised",
-        text: "You've read Murasaki Shikibu's masterpiece? Most people find classical Japanese literature too difficult."
+        text: "You're still here. Even after I showed you the title of the tragedy. You're either very brave or very foolish."
       },
       {
         character: "narrator",
-        text: "For the first time, you see genuine excitement in Rinne's eyes."
+        text: "Rinne is sitting on the floor between the bookshelves. She looks exhausted, the dark circles under her eyes more prominent than ever."
       },
       {
         character: "rin",
         sprite: "rin_character_gentle",
-        text: "Which chapter impressed you the most? I find the psychological depth of the characters fascinating."
+        text: "I've been watching them for years. Yuki's control. Megumi's fear. I thought I could just stay a spectator. But spectators are complicit in the play, aren't they?"
       },
       {
         character: "narrator",
-        text: "As you discuss literature, Rinne gradually opens up, revealing her passion for stories and human nature."
-      }
-    ],
-    choices: [
-      {
-        text: "The relationship between Genji and Murasaki",
-        next: "rin_ending_good"
-      },
-      {
-        text: "The political intrigue aspects",
-        next: "rin_ending_neutral"
-      }
-    ]
-  },
-
-  rin_ending_good: {
-    background: "moonlight_terrace",
-    music: "mysterious_night_theme",
-    dialogue: [
-      {
-        character: "narrator",
-        text: "Under the moonlight on the school terrace, you and Rinne continue your deep literary discussions."
+        text: "She reaches out and touches your sleeve, her fingers light as a bird's wing. It's the first time she's initiated contact."
       },
       {
         character: "rin",
-        sprite: "rin_character_gentle",
-        text: "I never expected to find someone who could understand the beauty of classical literature like you do."
-      },
-      {
-        character: "narrator",
-        text: "The night wind carries the scent of cherry blossoms as two kindred spirits connect through their shared love of literature."
-      },
-      {
-        character: "narrator",
-        text: "THE END - Rinne's Route: Moonlit Conversations"
+        sprite: "rin_character",
+        text: "Tomorrow, at the School Festival, the curtains will rise on the final act. I've gathered the evidence. The real truth. But showing it... it will destroy them."
       }
     ],
     choices: [
       {
-        text: "Return to title screen",
-        next: "title_screen"
+        text: "Show me the truth, Rinne",
+        next: "the_revelation"
+      },
+      {
+        text: "Maybe some truths are better left hidden",
+        next: "the_revelation"
       }
     ]
   },
-
-  // Neutral endings and other routes would continue here...
-  // For brevity, I'll add a few more key endings
 
   explore_school: {
     background: "hallway",
@@ -690,21 +600,17 @@ export const storyData = {
       },
       {
         character: "narrator",
-        text: "As you walk through the hallways, you reflect on the three interesting girls you met today."
+        text: "As you walk through the hallways, you reflect on the girls you met today. Each one seems to be carrying a world of secrets behind their eyes."
       },
       {
         character: "narrator",
-        text: "Each of them seems to have their own unique charm and story. Perhaps tomorrow you'll have a chance to get to know them better."
-      },
-      {
-        character: "narrator",
-        text: "THE END - Neutral Route: New Beginnings"
+        text: "Tomorrow is the School Festival. Something tells you the peace won't last much longer."
       }
     ],
     choices: [
       {
-        text: "Return to title screen",
-        next: "title_screen"
+        text: "Prepare for tomorrow",
+        next: "the_revelation"
       }
     ]
   },
@@ -715,73 +621,74 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "The school festival is in full swing. Laughter, music, the smell of fried food. But in this corner of the cafeteria, the air is freezing."
+        text: "The School Festival is at its peak. Outside, fireworks are beginning to bloom against the night sky. But inside the cafeteria, the air is thick with a silence that feels like a physical weight."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "It's time to stop the play. The masks are starting to melt."
+        text: "The play is over. The masks are already cracked. Let's just finish it."
       },
       {
         character: "narrator",
-        text: "Rinne drops a stack of photographs on the table. They show Yukino meeting with the school board, and Megumi crying in a dark hallway."
+        text: "Rinne slams a folder onto the table. It's full of transcriptions—student council logs, private messages, and grade alteration reports."
       },
       {
         character: "yuki",
         sprite: "yuki_character_thoughtful",
-        text: "...I did it for the stability of the school. You were a variable, a risk. I had to ensure you were... contained."
+        text: "I did it for the prestige of the school! If the rankings dropped, we all lose! I was just... managing the variables."
       },
       {
         character: "mei",
         sprite: "mei_character",
-        text: "And I... I was scared. They were going to kick me off the team because of my grades. Yuki said she'd fix it if I kept you distracted."
+        text: "And I was just one of your 'variables', right, Yuki? You threatened to expose my family's financial situation if I didn't help you 'manage' the new student."
       },
       {
         character: "narrator",
-        text: "The betrayal hits like a physical blow. The two people you thought you were getting close to were just playing their parts in a script written by fear and control."
+        text: "The public speaker above us crackles to life. It's the principal's voice, announcing the final awards. But no one is listening. A small crowd has gathered, their eyes wide as they realize the 'Perfect Student' and the 'Track Star' are tearing each other apart."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "Now, the script is torn. You have one choice. One person gets to walk away with their dignity. The others... they stay in the dark."
+        text: "You can only save one of them from the consequences. The principal is on his way here. If you speak up now, you can take the blame for the grade alterations. One person walks away clean. The others... their lives change tonight."
       }
     ],
     choices: [
       {
-        text: "Forgive Yukino (Conditional Love)",
+        text: "Protect Yukino (Accept her conditional love)",
         next: "yuki_ending_bittersweet"
       },
       {
-        text: "Comfort Megumi (Fragile Trust)",
+        text: "Save Megumi (Accept the fragile truth)",
         next: "mei_ending_bittersweet"
       },
       {
-        text: "Walk away with Rinne (The Cold Truth)",
+        text: "Stay with Rinne (Accept the cold reality)",
         next: "rin_ending_bittersweet"
       }
     ]
   },
 
+  // Endings
   yuki_ending_bittersweet: {
     background: "garden",
     music: "romantic_sakura_theme",
     dialogue: [
       {
         character: "narrator",
-        text: "You chose to stay with Yukino. The 'Perfect Girl' is gone, replaced by someone who is terrified of losing control."
+        text: "You took the fall. You're expelled, your record stained forever. Yukino stays the 'Perfect Girl' in the eyes of the school, but she knows the cost."
       },
       {
         character: "yuki",
         sprite: "yuki_character_thoughtful",
-        text: "I'll never lie to you again. But I can't promise I won't try to protect you from things you don't even know exist."
+        text: "I'll never let your sacrifice be in vain. I'll make sure this school becomes exactly what I promised. Safe. Controlled. Perfect."
       },
       {
         character: "narrator",
-        text: "Your relationship is built on a foundation of broken trust and desperate need. It's love, but it's conditional. You'll always wonder what she's not telling you."
+        text: "She visits you every week. She says she loves you. But when she looks at you, you see the guilt, and she sees the only person who knows what she's capable of. It's a relationship built on a debt that can never be paid."
       },
       {
         character: "narrator",
-        text: "THE END - Yukino's Route: The Controlled Heart"
+        text: "THE END - Yukino's Route: The Debt of Devotion"
       }
     ],
     choices: [
@@ -798,20 +705,20 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "Megumi is crying. She's lost her place on the team, and she's lost the easy cheerfulness she used to hide behind."
+        text: "You confessed to everything. Megumi stays on the team, her future secure. But the girl who used to laugh and pull your arm is gone."
       },
       {
         character: "mei",
         sprite: "mei_character",
-        text: "I'm a mess. I'm a liar. Why would you even look at me?"
+        text: "I'm still running. But I'm not running for speed anymore. I'm just running because I can't stand to be still with what I did to you."
       },
       {
         character: "narrator",
-        text: "You stay with her, but the silence between you is heavy. The girl you first met is gone. The person left behind is real, but she's broken."
+        text: "She's successful, a national star. But every time she wins a race, she looks at the crowd, searching for the person who sacrificed everything for her. You're together, but the shadow of the truth will always be the third person in your relationship."
       },
       {
         character: "narrator",
-        text: "THE END - Megumi's Route: The Fragile Truth"
+        text: "THE END - Megumi's Route: The Loneliness of the Long-Distance Runner"
       }
     ],
     choices: [
@@ -828,20 +735,20 @@ export const storyData = {
     dialogue: [
       {
         character: "narrator",
-        text: "You walk away from the others and find Rinne on the terrace. She doesn't look triumphant."
+        text: "You let the truth come out. Yukino is disgraced, Megumi is gone. The school is in chaos. You and Rinne stand on the terrace, watching the fallout."
       },
       {
         character: "rin",
         sprite: "rin_character",
-        text: "I told you. The ending is always the same. Truth doesn't make things better. It just makes them clear."
+        text: "We're the only ones left in the theater. The lights are off, the actors have fled. Was it worth it? The cold, hard truth?"
       },
       {
         character: "narrator",
-        text: "She takes your hand. It's ice cold. You're together, but you're both alone in the knowledge of how easily people can break each other."
+        text: "She takes your hand. Her skin is ice cold. You're together, but you're both ghosts now, haunted by the lives you destroyed in the name of honesty. There's no forgiveness here, only the shared silence of those who know too much."
       },
       {
         character: "narrator",
-        text: "THE END - Rinne's Route: The Observer's Price"
+        text: "THE END - Rinne's Route: The Silence of the Aftermath"
       }
     ],
     choices: [
