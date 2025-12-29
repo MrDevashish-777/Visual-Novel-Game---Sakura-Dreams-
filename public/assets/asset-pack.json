@@ -285,12 +285,12 @@
       {
         "type": "audio",
         "key": "beach_theme",
-        "path": "/public/assets/Bg_sound/Beach-m.mp3"
+        "url": "assets/Bg_sound/Beach-m.mp3"
       },
       {
         "type": "audio",
         "key": "mountain_theme",
-        "path": "/public/assets/Bg_sound/Mountain-m.mp3"
+        "url": "assets/Bg_sound/Mountain-m.mp3"
       }
     ]
   },

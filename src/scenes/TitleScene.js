@@ -131,8 +131,25 @@ export default class TitleScene extends Phaser.Scene {
     // Setup input
     this.setupInputs()
     
-    // Play background music
-    this.playBackgroundMusic()
+    // Defer background music until user gesture to satisfy autoplay policy
+    const startAudio = () => {
+      // Resume AudioContext if suspended (required on some browsers)
+      if (this.sound && this.sound.context && this.sound.context.state === 'suspended') {
+        this.sound.context.resume().then(() => {
+          this.playBackgroundMusic()
+        }).catch(() => {
+          this.playBackgroundMusic()
+        })
+      } else {
+        this.playBackgroundMusic()
+      }
+    }
+
+    // Listen for first user interaction (pointerdown or key press)
+    this.input.once('pointerdown', startAudio)
+    this.input.keyboard.once('keydown', startAudio)
+
+    // Note: this ensures audio starts only after a user gesture and avoids autoplay errors
   }
 
   createBackground() {
