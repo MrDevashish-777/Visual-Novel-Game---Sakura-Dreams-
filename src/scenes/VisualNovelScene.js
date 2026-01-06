@@ -1,16 +1,32 @@
 import Phaser from 'phaser'
 import { screenSize, visualNovelConfig, audioConfig } from '../gameConfig.json'
 import { storyData, characters, backgrounds } from '../storyData.js'
+import { SaveService } from '../services/SaveService'
 
 export default class VisualNovelScene extends Phaser.Scene {
   constructor() {
     super({ key: 'VisualNovelScene' })
   }
 
-  init() {
+  init(data) {
+    // User and Save data from TitleScene
+    this.user = data?.user || null
+    const saveData = data?.saveData || null
+
     // Initialize game state
-    this.currentScene = 'start'
-    this.currentDialogueIndex = 0
+    this.currentScene = saveData?.currentScene || 'start'
+    
+    // Character affinity and story state
+    this.gameState = saveData?.gameState || {
+      affinity: {
+        yuki: 0,
+        mei: 0,
+        rin: 0
+      },
+      flags: {}
+    }
+
+    this.currentDialogueIndex = this.gameState.currentDialogueIndex || 0
     this.isTyping = false
     this.isShowingChoices = false
     this.currentText = ''
@@ -19,8 +35,6 @@ export default class VisualNovelScene extends Phaser.Scene {
     this.currentCharacterSprite = null
     this.currentBackground = null
     this.currentMusic = null
-    
-    // UI elements
     this.textBox = null
     this.nameBox = null
     this.dialogueText = null
@@ -167,51 +181,100 @@ export default class VisualNovelScene extends Phaser.Scene {
     
     // Start the first dialogue
     this.showDialogue()
+
+    // Auto-save game
+    this.saveGame()
+  }
+
+  async saveGame() {
+    if (!this.user) return
+
+    const saveParams = {
+      user_id: this.user.id,
+      current_node: this.currentScene,
+      state: {
+        currentDialogueIndex: this.currentDialogueIndex,
+        ...this.gameState
+      }
+    }
+
+    await SaveService.saveGame(saveParams)
   }
 
   setBackground(backgroundKey) {
     const screenWidth = screenSize.width.value
     const screenHeight = screenSize.height.value
     
-    if (this.currentBackground) {
-      this.currentBackground.destroy()
-    }
-
     const backgroundAsset = backgrounds[backgroundKey]
-    if (backgroundAsset) {
+    if (!backgroundAsset) return
+
+    if (this.currentBackground) {
+      if (this.currentBackground.texture.key === backgroundAsset) return
+      this.currentBackground.setTexture(backgroundAsset)
+    } else {
       this.currentBackground = this.add.image(screenWidth / 2, screenHeight / 2, backgroundAsset)
-      
-      // Calculate scale to cover entire screen
-      const scaleX = screenWidth / this.currentBackground.width
-      const scaleY = screenHeight / this.currentBackground.height
-      const scale = Math.max(scaleX, scaleY)
-      
-      this.currentBackground.setScale(scale)
       this.currentBackground.setDepth(-2)
     }
+    
+    // Calculate scale to cover entire screen
+    const scaleX = screenWidth / this.currentBackground.width
+    const scaleY = screenHeight / this.currentBackground.height
+    const scale = Math.max(scaleX, scaleY)
+    
+    this.currentBackground.setScale(scale)
   }
 
   playMusic(musicKey) {
     if (!musicKey) return
     
-    if (this.currentMusic && this.currentMusic.key !== musicKey) {
+    if (this.currentMusic) {
+      if (this.currentMusic.key === musicKey && this.currentMusic.isPlaying) return
       this.currentMusic.stop()
     }
 
-    if (!this.currentMusic || this.currentMusic.key !== musicKey) {
-      this.currentMusic = this.sound.add(musicKey, {
-        volume: audioConfig.musicVolume.value,
-        loop: true
-      })
-      this.currentMusic.play()
-    }
+    this.currentMusic = this.sound.add(musicKey, {
+      volume: audioConfig.musicVolume.value,
+      loop: true
+    })
+    this.currentMusic.play()
   }
 
   showDialogue() {
     const scene = storyData[this.currentScene]
     if (!scene || !scene.dialogue) return
 
-    const dialogue = scene.dialogue[this.currentDialogueIndex]
+    let dialogue = scene.dialogue[this.currentDialogueIndex]
+    
+    // Check for conditions and skip if not met
+    while (dialogue && dialogue.condition) {
+      let conditionMet = true
+      
+      if (dialogue.condition.affinity) {
+        for (const char in dialogue.condition.affinity) {
+          if (this.gameState.affinity[char] < dialogue.condition.affinity[char]) {
+            conditionMet = false
+            break
+          }
+        }
+      }
+      
+      if (conditionMet && dialogue.condition.flags) {
+        for (const flag in dialogue.condition.flags) {
+          if (this.gameState.flags[flag] !== dialogue.condition.flags[flag]) {
+            conditionMet = false
+            break
+          }
+        }
+      }
+      
+      if (conditionMet) {
+        break
+      } else {
+        this.currentDialogueIndex++
+        dialogue = scene.dialogue[this.currentDialogueIndex]
+      }
+    }
+
     if (!dialogue) {
       // Dialog finished, show choices
       if (scene.choices && scene.choices.length > 0) {
@@ -237,39 +300,47 @@ export default class VisualNovelScene extends Phaser.Scene {
     const screenWidth = screenSize.width.value
     const screenHeight = screenSize.height.value
     
-    // Remove current character sprite
-    if (this.currentCharacterSprite) {
-      this.currentCharacterSprite.destroy()
-      this.currentCharacterSprite = null
+    if (!spriteKey || !characters[characterKey]) {
+      if (this.currentCharacterSprite) {
+        this.currentCharacterSprite.setVisible(false)
+      }
+      return
     }
 
-    if (spriteKey && characters[characterKey]) {
+    if (this.currentCharacterSprite) {
+      this.currentCharacterSprite.setVisible(true)
+      if (this.currentCharacterSprite.texture.key !== spriteKey) {
+        this.currentCharacterSprite.setTexture(spriteKey)
+        // Reset alpha for fade-in if texture changed
+        this.currentCharacterSprite.setAlpha(0)
+      } else {
+        // If texture is same, just ensure it's visible
+        this.currentCharacterSprite.setAlpha(1)
+        return
+      }
+    } else {
       this.currentCharacterSprite = this.add.image(
         screenWidth / 2, 
         screenHeight / 2, 
         spriteKey
       )
-      
-      // Setup character scale
-      const characterScale = visualNovelConfig.characterScaleInDialog.value
-      this.currentCharacterSprite.setScale(characterScale)
-      
-      // Set character position (bottom aligned, adjusted closer to bottom)
-      this.currentCharacterSprite.setOrigin(0.5, 1)
-      this.currentCharacterSprite.setY(screenHeight - 120) // Changed from 180 to 120 to display character closer to bottom
-      
-      // Set depth - display character behind dialog box
       this.currentCharacterSprite.setDepth(-1)
-      
-      // Fade-in animation
+      this.currentCharacterSprite.setOrigin(0.5, 1)
+      this.currentCharacterSprite.setY(screenHeight - 120)
       this.currentCharacterSprite.setAlpha(0)
-      this.tweens.add({
-        targets: this.currentCharacterSprite,
-        alpha: 1,
-        duration: 300,
-        ease: 'Power2'
-      })
     }
+
+    // Setup character scale
+    const characterScale = visualNovelConfig.characterScaleInDialog.value
+    this.currentCharacterSprite.setScale(characterScale)
+    
+    // Fade-in animation
+    this.tweens.add({
+      targets: this.currentCharacterSprite,
+      alpha: 1,
+      duration: 300,
+      ease: 'Power2'
+    })
   }
 
   setCharacterName(characterKey) {
@@ -336,7 +407,30 @@ export default class VisualNovelScene extends Phaser.Scene {
     // Clear previous choice buttons
     this.choicesContainer.removeAll(true)
     
-    choices.forEach((choice, index) => {
+    let visibleChoices = choices.filter(choice => {
+      if (!choice.condition) return true
+      
+      let conditionMet = true
+      if (choice.condition.affinity) {
+        for (const char in choice.condition.affinity) {
+          if (this.gameState.affinity[char] < choice.condition.affinity[char]) {
+            conditionMet = false
+            break
+          }
+        }
+      }
+      if (conditionMet && choice.condition.flags) {
+        for (const flag in choice.condition.flags) {
+          if (this.gameState.flags[flag] !== choice.condition.flags[flag]) {
+            conditionMet = false
+            break
+          }
+        }
+      }
+      return conditionMet
+    })
+
+    visibleChoices.forEach((choice, index) => {
       const yPosition = screenHeight - 300 - (index * 70)
       
       // Create choice button background
@@ -374,7 +468,23 @@ export default class VisualNovelScene extends Phaser.Scene {
       
       choiceButton.on('pointerdown', () => {
         this.sound.play('ui_click', { volume: audioConfig.sfxVolume.value })
+        
+        // Apply choice effects
+        if (choice.effects) {
+          if (choice.effects.affinity) {
+            for (const char in choice.effects.affinity) {
+              this.gameState.affinity[char] += choice.effects.affinity[char]
+            }
+          }
+          if (choice.effects.flags) {
+            for (const flag in choice.effects.flags) {
+              this.gameState.flags[flag] = choice.effects.flags[flag]
+            }
+          }
+        }
+
         this.choicesContainer.setVisible(false)
+        this.saveGame() // Save after choice
         this.loadScene(choice.next)
       })
     })
@@ -429,6 +539,7 @@ export default class VisualNovelScene extends Phaser.Scene {
   nextDialogue() {
     this.currentDialogueIndex++
     this.showDialogue()
+    this.saveGame() // Save after dialogue advance
   }
 
   update() {

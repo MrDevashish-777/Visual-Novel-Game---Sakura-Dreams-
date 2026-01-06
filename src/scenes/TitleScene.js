@@ -1,10 +1,14 @@
 import Phaser from 'phaser'
 import { screenSize, audioConfig } from '../gameConfig.json'
+import { AuthService } from '../services/AuthService'
+import { SaveService } from '../services/SaveService'
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
     super({ key: 'TitleScene' })
     this.isStarting = false
+    this.user = null
+    this.existingSave = null
   }
 
   init() {
@@ -121,7 +125,7 @@ export default class TitleScene extends Phaser.Scene {
     }
   }
 
-  create() {
+  async create() {
     // Create background
     this.createBackground()
     
@@ -149,7 +153,47 @@ export default class TitleScene extends Phaser.Scene {
     this.input.once('pointerdown', startAudio)
     this.input.keyboard.once('keydown', startAudio)
 
-    // Note: this ensures audio starts only after a user gesture and avoids autoplay errors
+    // Handle Supabase Authentication
+    await this.handleAuth()
+  }
+
+  async handleAuth() {
+    const { success, user } = await AuthService.signInAnonymously()
+    if (success) {
+      this.user = user
+      const { data } = await SaveService.loadGame(user.id)
+      if (data) {
+        this.existingSave = data
+        this.showContinueButton()
+      }
+    }
+  }
+
+  showContinueButton() {
+    const screenWidth = screenSize.width.value
+    const screenHeight = screenSize.height.value
+
+    if (this.continueText) this.continueText.destroy()
+
+    this.continueText = this.add.text(screenWidth / 2, screenHeight * 0.7, 'Press C to Continue Last Save', {
+      fontFamily: 'Arial, sans-serif',
+      fontSize: Math.min(screenWidth / 30, 24) + 'px',
+      fill: '#FFB6C1',
+      stroke: '#000000',
+      strokeThickness: 3,
+      align: 'center'
+    }).setOrigin(0.5, 0.5)
+
+    this.tweens.add({
+      targets: this.continueText,
+      alpha: 0.5,
+      duration: 800,
+      ease: 'Sine.easeInOut',
+      yoyo: true,
+      repeat: -1
+    })
+
+    this.cKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.C)
   }
 
   createBackground() {
@@ -256,7 +300,7 @@ export default class TitleScene extends Phaser.Scene {
     this.backgroundMusic.play()
   }
 
-  startGame() {
+  startGame(isContinue = false) {
     if (this.isStarting) return
     
     this.isStarting = true
@@ -273,84 +317,42 @@ export default class TitleScene extends Phaser.Scene {
     this.gameTitle.setVisible(false)
     this.startText.setVisible(false)
     this.subtitleText.setVisible(false)
+    if (this.continueText) this.continueText.setVisible(false)
     
     // Start actual loading (now simplified)
-    this.startActualLoading()
+    this.startActualLoading(isContinue)
   }
 
-  showGameLoadingInterface() {
-    // This method is no longer needed as loading is simplified
-    this.startActualLoading()
-  }
-
-  createGameLoadingUI() {
-    // This method is no longer needed as loading is simplified
-  }
-
-  // All complex loading UI methods are no longer needed
-
-  startActualLoading() {
+  startActualLoading(isContinue) {
     // All resources are now loaded via asset-pack.json in preload()
     // Just transition to game scene directly
     this.time.delayedCall(500, () => {
-      this.transitionToGameSceneDirectly()
+      this.transitionToGameSceneDirectly(isContinue)
     })
   }
 
-  updateProgressBar() {
-    const params = this.progressBarParams
-    const fillWidth = (params.width * this.currentProgress) / 100
-    
-    // Clear previous fill
-    this.progressFill.clear()
-    
-    // Draw new progress fill
-    if (fillWidth > 0) {
-      // Academy theme gradient effect - from pink to blue
-      let color
-      if (this.currentProgress < 50) {
-        // Pink to purple
-        color = Phaser.Display.Color.Interpolate.ColorWithColor(
-          { r: 255, g: 182, b: 193 }, // Pink
-          { r: 147, g: 112, b: 219 }, // Purple
-          1,
-          this.currentProgress / 50
-        )
-      } else {
-        // Purple to blue
-        color = Phaser.Display.Color.Interpolate.ColorWithColor(
-          { r: 147, g: 112, b: 219 }, // Purple
-          { r: 74, g: 144, b: 226 },  // Blue
-          1,
-          (this.currentProgress - 50) / 50
-        )
-      }
-      
-      this.progressFill.fillStyle(Phaser.Display.Color.GetColor32(color.r, color.g, color.b, 255))
-      this.progressFill.fillRoundedRect(params.x, params.y, fillWidth, params.height, 3)
-    }
-    
-    // Update percentage text
-    this.progressText.setText(Math.floor(this.currentProgress) + '%')
-  }
-
-  // completeActualLoading method is no longer needed
-
-  transitionToGameSceneDirectly() {
+  transitionToGameSceneDirectly(isContinue) {
     // Clean up progress bar elements
     if (this.progressBar) this.progressBar.destroy()
     if (this.progressFill) this.progressFill.destroy()
     if (this.progressText) this.progressText.destroy()
     
-    // Start VisualNovelScene
-    this.scene.start('VisualNovelScene')
+    // Start VisualNovelScene with user and save data if applicable
+    this.scene.start('VisualNovelScene', { 
+      user: this.user, 
+      saveData: isContinue ? this.existingSave : null 
+    })
   }
 
   update() {
     // Detect keyboard input
     if (Phaser.Input.Keyboard.JustDown(this.enterKey) || 
         Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-      this.startGame()
+      this.startGame(false)
+    }
+
+    if (this.cKey && Phaser.Input.Keyboard.JustDown(this.cKey)) {
+      this.startGame(true)
     }
   }
 }
