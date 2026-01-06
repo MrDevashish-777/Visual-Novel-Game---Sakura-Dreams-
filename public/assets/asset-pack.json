@@ -203,6 +203,96 @@
         "type": "image",
         "key": "rin_character_thoughtful",
         "url": "https://specai-game-assets.s3.us-west-1.amazonaws.com/1089/images/rin_character_thoughtful.png"
+      },
+      {
+        "type": "image",
+        "key": "jei_character",
+        "url": "assets/Characters/Jei/jei.png"
+      },
+      {
+        "type": "image",
+        "key": "jei_character_sad",
+        "url": "assets/Characters/Jei/jei-sad.png"
+      },
+      {
+        "type": "image",
+        "key": "jei_character_happy",
+        "url": "assets/Characters/Jei/jei-happy.png"
+      },
+      {
+        "type": "image",
+        "key": "jei_character_blush",
+        "url": "assets/Characters/Jei/jei-blush.png"
+      },
+      {
+        "type": "image",
+        "key": "jei_character_angry",
+        "url": "assets/Characters/Jei/jei-angry.png"
+      },
+      {
+        "type": "image",
+        "key": "hori_character_angry",
+        "url": "assets/Characters/hori-san/hori-angry.png"
+      },
+      {
+        "type": "image",
+        "key": "hori_character_cute",
+        "url": "assets/Characters/hori-san/hori-cute.png"
+      },
+      {
+        "type": "image",
+        "key": "hori_character_happy",
+        "url": "assets/Characters/hori-san/hori-happy.png"
+      },
+      {
+        "type": "image",
+        "key": "hori_character_big",
+        "url": "assets/Characters/hori-san/hori-san-big.png"
+      },
+      {
+        "type": "image",
+        "key": "hori_character_sad",
+        "url": "assets/Characters/hori-san/hori-sad.png"
+      },
+      {
+        "type": "image",
+        "key": "takamura_character",
+        "url": "assets/Characters/Takamura/takamura-normal.png"
+      },
+      {
+        "type": "image",
+        "key": "takamura_character_angry",
+        "url": "assets/Characters/Takamura/takamura-angry.png"
+      },
+      {
+        "type": "image",
+        "key": "takamura_character_happy",
+        "url": "assets/Characters/Takamura/takamura-happy.png"
+      },
+      {
+        "type": "image",
+        "key": "takamura_character_requesting",
+        "url": "assets/Characters/Takamura/takamura-requesting.png"
+      },
+      {
+        "type": "image",
+        "key": "jenni_character",
+        "url": "assets/Characters/Side_Characters/jenni.png"
+      },
+      {
+        "type": "image",
+        "key": "jisoo_character",
+        "url": "assets/Characters/Side_Characters/jisoo.png"
+      },
+      {
+        "type": "image",
+        "key": "lisa_character",
+        "url": "assets/Characters/Side_Characters/lisa.png"
+      },
+      {
+        "type": "image",
+        "key": "rose_character",
+        "url": "assets/Characters/Side_Characters/rose.png"
       }
     ]
   },
@@ -291,6 +381,11 @@
         "type": "audio",
         "key": "mountain_theme",
         "url": "assets/Bg_sound/Mountain-m.mp3"
+      },
+      {
+        "type": "audio",
+        "key": "dramatic_tension_theme",
+        "url": "assets/Bg_sound/tension-dramatic-raga-kiravani-tension-358830.mp3"
       }
     ]
   },

@@ -15,6 +15,41 @@ export const characters = {
     sprite: "rin_character", 
     color: "#9013FE" 
   },
+  jei: {
+    name: "Jei Akerman", 
+    sprite: "jei_character", 
+    color: "#bc2626ff" 
+  },
+  hori: {
+    name: "Hori San", 
+    sprite: "hori_character", 
+    color: "#c819c2ff" 
+  },
+  takamura: {
+    name: "Takamura Takashi",
+    sprite: "takamura_character", 
+    color: "#18169aff" 
+  },
+  jenni: {
+    name: "Jenni Hermoso", 
+    sprite: "jenni_character", 
+    color: "#42fe13ff" 
+  },
+  jisoo: {
+    name: "Kim Ji-soo", 
+    sprite: "jisoo_character", 
+    color: "#d4c717ff" 
+  },
+  lisa: {
+    name: "Lalisa Manoban", 
+    sprite: "lisa_character", 
+    color: "#ab0b93ff" 
+  },
+  rose: {
+    name: "Roseanne Park",
+    sprite: "rose_character", 
+    color: "#df2f2fff" 
+  },
   narrator: {
     name: "",
     sprite: null,
