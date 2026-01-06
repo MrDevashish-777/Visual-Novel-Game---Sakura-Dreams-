@@ -16,17 +16,17 @@ export const characters = {
     color: "#9013FE" 
   },
   jei: {
-    name: "Jei Akerman", 
+    name: "Jei Akerman", //The Instigator, Theme: Violence disguised as honesty, Function: Says what others think but won’t say, Danger: Makes cruelty feel justified
     sprite: "jei_character", 
     color: "#bc2626ff" 
   },
   hori: {
-    name: "Hori San", 
+    name: "Hori San", //The Emotional Parasite, Theme: Care as consumption, Function: Rewards vulnerability, then exploits it, Danger: Makes the player feel needed
     sprite: "hori_character", 
     color: "#c819c2ff" 
   },
   takamura: {
-    name: "Takamura Takashi",
+    name: "Takamura Takashi", //he Enforcer, Theme: Rules without morality, Function: Makes consequences real, Danger: Never lies — never cares
     sprite: "takamura_character", 
     color: "#18169aff" 
   },
